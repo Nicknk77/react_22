@@ -1,0 +1,14 @@
+$backColor: #9ee;
+$textColor: #f77;
+
+.pMessage {
+    background-color: $backColor;
+    color: $textColor;
+    margin: 2rem auto;
+    padding: 0.5rem;
+    width: fit-content;
+    max-width: 60%;
+    text-align: justify;
+    font-size: 2rem;
+    font-weight: 100;
+}
