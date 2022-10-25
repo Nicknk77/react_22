@@ -18,3 +18,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.butSend {
+  padding: 5px;
+  text-transform: uppercase;
+}
+.butSend:hover {
+  cursor: pointer;
+}
+.listMessage {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: flex-start;
+  border: 1px solid #333;
+}
+.listMessage > li {
+  list-style-type: none;
+}
+.listMessage > li > span {
+  font-weight: 100;
+  text-transform: uppercase;
+}
