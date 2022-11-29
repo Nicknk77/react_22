@@ -3,6 +3,12 @@ import './components/message.css'
 import { Message } from './components/Message';
 import { useEffect, useState } from 'react';
 import { ListItem, List, TextField, Button } from '@mui/material';
+import STORE from './store/store';
+import action_1 from './store/actionCreator/action_1';
+import action_2 from './store/actionCreator/action_2';
+import reducer from './store/reducers/reducer_1';
+import ACTION_1 from './store/actions/action_1';
+import ACTION_2 from './store/actions/action_2';
 
 
 function App() {
@@ -37,6 +43,21 @@ function App() {
     setTimeout(() => { (author.length > 0) ? setGreet('Приветствую Вас, ' + author) : setGreet('') }, 1500)
   }, [author]);
 
+  function getProfile() {
+    let prof = +document.getElementById('profile').checked;
+    if (prof) {
+      const profile = action_1();
+      reducer(profile, ACTION_1);
+      STORE.dispatch(action_1("Profile N1"));
+    }
+    else {
+      const profile = action_2();
+      reducer(profile, ACTION_2);
+      STORE.dispatch(action_2("Profile N2"));
+    }
+    console.log(STORE.getState());
+  };
+
 
   return (
     <div className="App">
@@ -53,6 +74,12 @@ function App() {
         })}
       </List>
       <h2>{greet}</h2>
+
+      <div className='forRedux'>
+        <label>choose Profile</label>
+        <input type="checkbox" id='profile' onChange={getProfile} />
+      </div>
+
     </div>
 
   );
