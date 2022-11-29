@@ -1,0 +1,11 @@
+.pMessage {
+  background-color: #9ee;
+  color: #f77;
+  margin: 2rem auto;
+  padding: 0.5rem;
+  width: fit-content;
+  max-width: 60%;
+  text-align: justify;
+  font-size: 2rem;
+  font-weight: 100;
+}/*# sourceMappingURL=message.css.map */
